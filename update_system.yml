@@ -1,0 +1,12 @@
+- name: Update System Packages
+  hosts: all
+  become: yes
+  tasks:
+  - name: Update package lists
+    apt:
+      update_cache: yes
+
+  - name: Upgrade all packages to the latest version
+    apt:
+      name: "*"
+      state: latest
