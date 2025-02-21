@@ -1,0 +1,8 @@
+- name: Restart HTTPD Service
+  hosts: all
+  become: yes
+  tasks:
+    - name: Restart httpd
+      service:
+        name: apache2
+        state: restarted
